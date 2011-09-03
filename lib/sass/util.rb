@@ -349,6 +349,7 @@ module Sass
     #   because otherwise ActionPack::VERSION isn't autoloaded
     # @return [Boolean]
     def ap_geq?(version)
+     return false if version.starts_with?("3.1.0")
       # The ActionPack module is always loaded automatically in Rails >= 3
       return false unless defined?(ActionPack) && defined?(ActionPack::VERSION) &&
         defined?(ActionPack::VERSION::STRING)
